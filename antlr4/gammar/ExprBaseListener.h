@@ -16,17 +16,33 @@
 class  ExprBaseListener : public ExprListener {
 public:
 
-  virtual void enterProg(ExprParser::ProgContext * /*ctx*/) override { }
-  virtual void exitProg(ExprParser::ProgContext * /*ctx*/) override { }
+  virtual void enterProg(ExprParser::ProgContext * /*ctx*/) override {
+      
+  }
+  virtual void exitProg(ExprParser::ProgContext * /*ctx*/) override {
+      
+  }
 
-  virtual void enterExpr(ExprParser::ExprContext * /*ctx*/) override { }
-  virtual void exitExpr(ExprParser::ExprContext * /*ctx*/) override { }
+  virtual void enterExpr(ExprParser::ExprContext * /*ctx*/) override {
+      
+  }
+  virtual void exitExpr(ExprParser::ExprContext * /*ctx*/) override {
+      
+  }
 
 
-  virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
-  virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
-  virtual void visitTerminal(antlr4::tree::TerminalNode * /*node*/) override { }
-  virtual void visitErrorNode(antlr4::tree::ErrorNode * /*node*/) override { }
+  virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override {
+      
+  }
+  virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override {
+      
+  }
+  virtual void visitTerminal(antlr4::tree::TerminalNode * /*node*/) override {
+      
+  }
+  virtual void visitErrorNode(antlr4::tree::ErrorNode * /*node*/) override {
+      
+  }
 
 };
 

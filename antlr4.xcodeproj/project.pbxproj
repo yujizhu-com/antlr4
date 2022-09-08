@@ -45,6 +45,7 @@
 		204EBCF728C9C40D008E01CA /* ExprVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprVisitor.cpp; sourceTree = "<group>"; };
 		204EBCFA28C9C40D008E01CA /* ExprListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprListener.h; sourceTree = "<group>"; };
 		204EBD0228C9C4E4008E01CA /* libantlr4-runtime.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libantlr4-runtime.a"; path = "4.11.1/lib/libantlr4-runtime.a"; sourceTree = "<group>"; };
+		204EBD0428C9E78D008E01CA /* antlr4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = antlr4.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		2048A3BB28C878BE008533B5 /* antlr4 */ = {
 			isa = PBXGroup;
 			children = (
+				204EBD0428C9E78D008E01CA /* antlr4.entitlements */,
 				204EBCEA28C9C40D008E01CA /* gammar */,
 				2048A3BC28C878BE008533B5 /* main.cpp */,
 			);
@@ -296,6 +298,7 @@
 		2048A3C128C878BE008533B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = antlr4/antlr4.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D32H89TCLS;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -314,6 +317,7 @@
 		2048A3C228C878BE008533B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = antlr4/antlr4.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D32H89TCLS;
 				ENABLE_HARDENED_RUNTIME = YES;
