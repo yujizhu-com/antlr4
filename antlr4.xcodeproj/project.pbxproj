@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2048A3BD28C878BE008533B5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2048A3BC28C878BE008533B5 /* main.cpp */; };
+		204EBCFB28C9C40D008E01CA /* ExprLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCEC28C9C40D008E01CA /* ExprLexer.cpp */; };
+		204EBCFC28C9C40D008E01CA /* ExprParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCEE28C9C40D008E01CA /* ExprParser.cpp */; };
+		204EBCFD28C9C40D008E01CA /* ExprBaseListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCEF28C9C40D008E01CA /* ExprBaseListener.cpp */; };
+		204EBCFE28C9C40D008E01CA /* ExprListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCF328C9C40D008E01CA /* ExprListener.cpp */; };
+		204EBCFF28C9C40D008E01CA /* ExprBaseVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCF528C9C40D008E01CA /* ExprBaseVisitor.cpp */; };
+		204EBD0028C9C40D008E01CA /* ExprVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCF728C9C40D008E01CA /* ExprVisitor.cpp */; };
+		204EBD0328C9C4E4008E01CA /* libantlr4-runtime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EBD0228C9C4E4008E01CA /* libantlr4-runtime.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,19 @@
 /* Begin PBXFileReference section */
 		2048A3B928C878BE008533B5 /* antlr4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = antlr4; sourceTree = BUILT_PRODUCTS_DIR; };
 		2048A3BC28C878BE008533B5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		204EBCEB28C9C40D008E01CA /* ExprParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprParser.h; sourceTree = "<group>"; };
+		204EBCEC28C9C40D008E01CA /* ExprLexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprLexer.cpp; sourceTree = "<group>"; };
+		204EBCED28C9C40D008E01CA /* ExprVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprVisitor.h; sourceTree = "<group>"; };
+		204EBCEE28C9C40D008E01CA /* ExprParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprParser.cpp; sourceTree = "<group>"; };
+		204EBCEF28C9C40D008E01CA /* ExprBaseListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprBaseListener.cpp; sourceTree = "<group>"; };
+		204EBCF028C9C40D008E01CA /* ExprBaseVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprBaseVisitor.h; sourceTree = "<group>"; };
+		204EBCF228C9C40D008E01CA /* ExprLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprLexer.h; sourceTree = "<group>"; };
+		204EBCF328C9C40D008E01CA /* ExprListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprListener.cpp; sourceTree = "<group>"; };
+		204EBCF528C9C40D008E01CA /* ExprBaseVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprBaseVisitor.cpp; sourceTree = "<group>"; };
+		204EBCF628C9C40D008E01CA /* ExprBaseListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprBaseListener.h; sourceTree = "<group>"; };
+		204EBCF728C9C40D008E01CA /* ExprVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprVisitor.cpp; sourceTree = "<group>"; };
+		204EBCFA28C9C40D008E01CA /* ExprListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprListener.h; sourceTree = "<group>"; };
+		204EBD0228C9C4E4008E01CA /* libantlr4-runtime.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libantlr4-runtime.a"; path = "4.11.1/lib/libantlr4-runtime.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204EBD0328C9C4E4008E01CA /* libantlr4-runtime.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +64,7 @@
 			children = (
 				2048A3BB28C878BE008533B5 /* antlr4 */,
 				2048A3BA28C878BE008533B5 /* Products */,
+				204EBD0128C9C4E4008E01CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,17 +79,37 @@
 		2048A3BB28C878BE008533B5 /* antlr4 */ = {
 			isa = PBXGroup;
 			children = (
-				204EBCD828C9BFBB008E01CA /* gammar */,
+				204EBCEA28C9C40D008E01CA /* gammar */,
 				2048A3BC28C878BE008533B5 /* main.cpp */,
 			);
 			path = antlr4;
 			sourceTree = "<group>";
 		};
-		204EBCD828C9BFBB008E01CA /* gammar */ = {
+		204EBCEA28C9C40D008E01CA /* gammar */ = {
 			isa = PBXGroup;
 			children = (
+				204EBCEF28C9C40D008E01CA /* ExprBaseListener.cpp */,
+				204EBCF628C9C40D008E01CA /* ExprBaseListener.h */,
+				204EBCF528C9C40D008E01CA /* ExprBaseVisitor.cpp */,
+				204EBCF028C9C40D008E01CA /* ExprBaseVisitor.h */,
+				204EBCEC28C9C40D008E01CA /* ExprLexer.cpp */,
+				204EBCF228C9C40D008E01CA /* ExprLexer.h */,
+				204EBCF328C9C40D008E01CA /* ExprListener.cpp */,
+				204EBCFA28C9C40D008E01CA /* ExprListener.h */,
+				204EBCEE28C9C40D008E01CA /* ExprParser.cpp */,
+				204EBCEB28C9C40D008E01CA /* ExprParser.h */,
+				204EBCF728C9C40D008E01CA /* ExprVisitor.cpp */,
+				204EBCED28C9C40D008E01CA /* ExprVisitor.h */,
 			);
 			path = gammar;
+			sourceTree = "<group>";
+		};
+		204EBD0128C9C4E4008E01CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				204EBD0228C9C4E4008E01CA /* libantlr4-runtime.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,8 +120,8 @@
 			buildConfigurationList = 2048A3C028C878BE008533B5 /* Build configuration list for PBXNativeTarget "antlr4" */;
 			buildPhases = (
 				2048A3B528C878BE008533B5 /* Sources */,
-				2048A3B628C878BE008533B5 /* Frameworks */,
 				2048A3B728C878BE008533B5 /* CopyFiles */,
+				2048A3B628C878BE008533B5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,7 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204EBD0028C9C40D008E01CA /* ExprVisitor.cpp in Sources */,
 				2048A3BD28C878BE008533B5 /* main.cpp in Sources */,
+				204EBCFD28C9C40D008E01CA /* ExprBaseListener.cpp in Sources */,
+				204EBCFC28C9C40D008E01CA /* ExprParser.cpp in Sources */,
+				204EBCFB28C9C40D008E01CA /* ExprLexer.cpp in Sources */,
+				204EBCFF28C9C40D008E01CA /* ExprBaseVisitor.cpp in Sources */,
+				204EBCFE28C9C40D008E01CA /* ExprListener.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +299,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D32H89TCLS;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/4.11.1/include\"/**";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/4.11.1/lib\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/4.11.1/include\"/**",
+					"\"$(SRCROOT)/antlr4\"/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/4.11.1/lib\"",
+					"$(PROJECT_DIR)/4.11.1/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -263,8 +317,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D32H89TCLS;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/4.11.1/include\"/**";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/4.11.1/lib\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/4.11.1/include\"/**",
+					"\"$(SRCROOT)/antlr4\"/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/4.11.1/lib\"",
+					"$(PROJECT_DIR)/4.11.1/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
