@@ -61,3 +61,102 @@ pointHandLayer:SHOW+in
 spine1:tips1*
 
 bodyButton1:SHOW
+bodyButton1/@
+	pointHandLayer:HIDE
+	startHandLayer:SHOW+in
+	bubbleLayer:SHOW+in
+	bodyButton1:HIDE
+	spine1:touch1+old_normal*
+	/
+
+CODER:CHANGE_PIC>
+bubbleLayer.startButton:SHOW
+bubbleLayer.startButton/@
+	bubbleLayer%normal+down+up
+	bubbleLayer:HIDE
+	startHandLayer:HIDE
+	bubbleLayer.startButton:HIDE
+	CODER:START>
+	/
+
+CODER@END<
+
+finishAni@finish_window
+spine1:finish+new_normal*
+
+woman@happy
+finishAni:none*
+
+//第二关
+ad_scene1@bed
+CODER:GTBegin>
+woman:normal*
+pointHandLayer:SHOW+in
+spine2:tips1*
+
+bodyButton2:SHOW
+bodyButton5:SHOW
+bodyButton2+bodyButton5/@
+	pointHandLayer:HIDE
+	startHandLayer:SHOW+in
+	bubbleLayer:SHOW+in
+	spine2:touch1+old_normal*
+	bodyButton2:HIDE
+	bodyButton5:HIDE
+	/
+
+CODER:CHANGE_PIC>
+bubbleLayer.startButton:SHOW
+bubbleLayer.startButton/@
+	bubbleLayer%normal+down+up
+	bubbleLayer:HIDE
+	startHandLayer:HIDE
+	bubbleLayer.startButton:HIDE
+	CODER:START>
+	/
+
+CODER@END<
+finishAni@finish_bed
+spine2:finish+new_normal*
+
+woman@happy
+finishAni:none*
+
+//第三关
+ad_scene1@fire
+CODER:GTBegin>
+woman:normal*
+pointHandLayer:SHOW+in
+spine3:tips1*
+
+bodyButton3:SHOW
+bodyButton4:SHOW
+bodyButton3+bodyButton4/@
+	pointHandLayer:HIDE
+	startHandLayer:SHOW+in
+	bubbleLayer:SHOW+in
+	bodyButton3:HIDE
+	bodyButton4:HIDE
+	spine3:touch1+old_normal*
+	/
+
+CODER:CHANGE_PIC>
+bubbleLayer.startButton:SHOW
+bubbleLayer.startButton/@
+	bubbleLayer%normal+down+up
+	bubbleLayer:HIDE
+	startHandLayer:HIDE
+	bubbleLayer.startButton:HIDE
+	CODER:START>
+	/
+
+CODER@END<
+finishAni@finish_fire
+spine3:finish+new_normal*
+
+woman@happy_tail
+finishAni:none*
+
+///检查游戏结束
+CODER@CHECK>
+CODER@FINISH<
