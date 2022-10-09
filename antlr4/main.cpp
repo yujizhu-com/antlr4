@@ -12,6 +12,7 @@
 #include "ExprBaseVisitor.h"
 #include "ExprLexer.h"
 #include "DicsListener.hpp"
+#include "DicsVisitor.hpp"
 
 using namespace std;
 
@@ -33,13 +34,17 @@ int main(int argc, const char * argv[])
     ExprLexer* lexer = new ExprLexer(input);
     antlr4::CommonTokenStream* tokens = new antlr4::CommonTokenStream(lexer);
     ExprParser* parser = new ExprParser(tokens);
-    cout <<  parser->dics()->toStringTree(parser,true) << endl;
+    
+    antlr4::ParserRuleContext* tree = parser->dics();
+    cout <<  tree->toStringTree(parser,true) << endl;
 
+    int child =  tree->children.size();
     ExprBaseListener* lis = new DicsListener();
     auto walker = new antlr4::tree::ParseTreeWalker();
-    walker->walk(lis, parser->dics());
+    walker->walk(lis, tree);
     
-    
+    ExprBaseVisitor* dv = new DicsVisitor();
+    dv->visit(tree);
 
 //    {
 //        std::string progStr =  "(100+5)\n";
