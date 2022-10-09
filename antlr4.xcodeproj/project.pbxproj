@@ -15,6 +15,7 @@
 		204EBCFF28C9C40D008E01CA /* ExprBaseVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCF528C9C40D008E01CA /* ExprBaseVisitor.cpp */; };
 		204EBD0028C9C40D008E01CA /* ExprVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204EBCF728C9C40D008E01CA /* ExprVisitor.cpp */; };
 		204EBD0328C9C4E4008E01CA /* libantlr4-runtime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EBD0228C9C4E4008E01CA /* libantlr4-runtime.a */; };
+		206E745A28F194D300B12819 /* DicsListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 206E745828F194D300B12819 /* DicsListener.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		204EBCFA28C9C40D008E01CA /* ExprListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExprListener.h; sourceTree = "<group>"; };
 		204EBD0228C9C4E4008E01CA /* libantlr4-runtime.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libantlr4-runtime.a"; path = "4.11.1/lib/libantlr4-runtime.a"; sourceTree = "<group>"; };
 		204EBD0428C9E78D008E01CA /* antlr4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = antlr4.entitlements; sourceTree = "<group>"; };
+		206E745828F194D300B12819 /* DicsListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DicsListener.cpp; sourceTree = "<group>"; };
+		206E745928F194D300B12819 /* DicsListener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DicsListener.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				204EBD0428C9E78D008E01CA /* antlr4.entitlements */,
 				204EBCEA28C9C40D008E01CA /* gammar */,
 				2048A3BC28C878BE008533B5 /* main.cpp */,
+				206E745828F194D300B12819 /* DicsListener.cpp */,
+				206E745928F194D300B12819 /* DicsListener.hpp */,
 			);
 			path = antlr4;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			files = (
 				204EBD0028C9C40D008E01CA /* ExprVisitor.cpp in Sources */,
 				2048A3BD28C878BE008533B5 /* main.cpp in Sources */,
+				206E745A28F194D300B12819 /* DicsListener.cpp in Sources */,
 				204EBCFD28C9C40D008E01CA /* ExprBaseListener.cpp in Sources */,
 				204EBCFC28C9C40D008E01CA /* ExprParser.cpp in Sources */,
 				204EBCFB28C9C40D008E01CA /* ExprLexer.cpp in Sources */,

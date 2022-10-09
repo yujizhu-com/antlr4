@@ -56,7 +56,7 @@ nl 	: 	NL+ 	;
 NL 	: 	[\t\n\r]	;
 BlockComment: 	'/*' .*? '*/' -> skip;
 LineComment	: 	'//' ~ [\r\n]* -> skip;
-// STR0		: 	'EOF'* ->skip ;
+STR0		: 	'EOF' -> skip ;
 
 ///L 	Linear
 ///P 	Parallel
