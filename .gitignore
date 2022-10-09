@@ -1,3 +1,15 @@
 antlr4.xcodeproj/xcuserdata
 antlr4.xcodeproj/project.xcworkspace
 .DS_Store
+antlr4/ADGame/*.java
+antlr4/ADGame/*.class
+antlr4/ADGame/*.interp
+antlr4/ADGame/*.tokens
+antlr4/gammar/*.java
+antlr4/gammar/*.class
+antlr4/gammar/*.interp
+antlr4/gammar/*.tokens
+Resources/files2/*.java
+Resources/files2/*.class
+Resources/files2/*.interp
+Resources/files2/*.tokens
