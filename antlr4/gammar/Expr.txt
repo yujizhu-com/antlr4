@@ -1,1 +1,162 @@
-100+2*34
+//author 余纪柱
+
+///符号解释
+///	=	字典
+///	@	串行命令
+///	:	并行命令
+/// +	顺序时间线
+/// /@  串行按钮命令
+/// CODER 事件
+/// SHOW  显示节点
+/// HIDE  隐藏节点
+///  >    发送程序事件
+///  <    等待程序事件
+
+///spine音乐事件规则
+///fire.mp3+0	停止播放fire
+///fire.mp3+1  	播一次fire
+///fire.mp3+-1	循环播放fire
+
+///程序:自定义字典
+title=Help Girl
+colorPic=plot_pic_girl.png
+greyPic=plot_pic_girl_grey.png
+colorPic2=plot_pic_girl_completed.png
+icon=plot_sence1_icon.png
+quit=plot_quit_girl.png
+bgm=断腿BGM.mp3
+overAni=great1
+bodysPic=ad_ui1.png+ad_ui2.png+ad_ui3.png
+
+level=3
+blur=true+true+true
+
+///资源文件
+adGame.plist
+
+///ccb文件
+ad_scene1.red
+
+//入场动画
+ad_scene1@in
+CODER:GTBegin>
+bubbleLayer:HIDE
+spine1:old_normal*
+spine2:old_normal*
+spine3:old_normal*
+finishAni:none*
+woman:in+normal*
+bubbleLayer.startButton:HIDE
+bodyButton1:HIDE
+bodyButton2:HIDE
+bodyButton3:HIDE
+bodyButton4:HIDE
+bodyButton5:HIDE
+pointHandLayer:HIDE
+startHandLayer:HIDE
+
+//第一关
+ad_scene1@window
+pointHandLayer:SHOW+in
+spine1:tips1*
+
+bodyButton1:SHOW
+bodyButton1/@
+	pointHandLayer:HIDE
+	startHandLayer:SHOW+in
+	bubbleLayer:SHOW+in
+	bodyButton1:HIDE
+	spine1:touch1+old_normal*
+	/
+
+CODER:CHANGE_PIC>
+bubbleLayer.startButton:SHOW
+bubbleLayer.startButton/@
+	bubbleLayer%normal+down+up
+	bubbleLayer:HIDE
+	startHandLayer:HIDE
+	bubbleLayer.startButton:HIDE
+	CODER:START>
+	/
+
+CODER@END<
+
+finishAni@finish_window
+spine1:finish+new_normal*
+
+woman@happy
+finishAni:none*
+
+//第二关
+ad_scene1@bed
+CODER:GTBegin>
+woman:normal*
+pointHandLayer:SHOW+in
+spine2:tips1*
+
+bodyButton2:SHOW
+bodyButton5:SHOW
+bodyButton2+bodyButton5/@
+	pointHandLayer:HIDE
+	startHandLayer:SHOW+in
+	bubbleLayer:SHOW+in
+	spine2:touch1+old_normal*
+	bodyButton2:HIDE
+	bodyButton5:HIDE
+	/
+
+CODER:CHANGE_PIC>
+bubbleLayer.startButton:SHOW
+bubbleLayer.startButton/@
+	bubbleLayer%normal+down+up
+	bubbleLayer:HIDE
+	startHandLayer:HIDE
+	bubbleLayer.startButton:HIDE
+	CODER:START>
+	/
+
+CODER@END<
+finishAni@finish_bed
+spine2:finish+new_normal*
+
+woman@happy
+finishAni:none*
+
+//第三关
+ad_scene1@fire
+CODER:GTBegin>
+woman:normal*
+pointHandLayer:SHOW+in
+spine3:tips1*
+
+bodyButton3:SHOW
+bodyButton4:SHOW
+bodyButton3+bodyButton4/@
+	pointHandLayer:HIDE
+	startHandLayer:SHOW+in
+	bubbleLayer:SHOW+in
+	bodyButton3:HIDE
+	bodyButton4:HIDE
+	spine3:touch1+old_normal*
+	/
+
+CODER:CHANGE_PIC>
+bubbleLayer.startButton:SHOW
+bubbleLayer.startButton/@
+	bubbleLayer%normal+down+up
+	bubbleLayer:HIDE
+	startHandLayer:HIDE
+	bubbleLayer.startButton:HIDE
+	CODER:START>
+	/
+
+CODER@END<
+finishAni@finish_fire
+spine3:finish+new_normal*
+
+woman@happy_tail
+finishAni:none*
+
+///检查游戏结束
+CODER@CHECK>
+CODER@FINISH<
