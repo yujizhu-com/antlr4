@@ -33,11 +33,11 @@ int main(int argc, const char * argv[])
     ExprLexer* lexer = new ExprLexer(input);
     antlr4::CommonTokenStream* tokens = new antlr4::CommonTokenStream(lexer);
     ExprParser* parser = new ExprParser(tokens);
-    cout <<  parser->dics()->toStringTree(parser) << endl;
+    cout <<  parser->dics()->toStringTree(parser,true) << endl;
 
     ExprBaseListener* lis = new DicsListener();
     auto walker = new antlr4::tree::ParseTreeWalker();
-    walker->walk(lis, parser->bdic());
+    walker->walk(lis, parser->dics());
     
     
 
