@@ -2,24 +2,20 @@ grammar Expr;
 
 content 		: 	nl*? ;
 
-dics	: nl*(bdic | files | dic |ldic | pdic)*  ;
+dics	: nl*(bdic | files | dic | pdic)*  ;
 
 //
-bdic	: bk '/@' bvs '/' nl* ;
-bk 		: bk '+' PV 
-		| PV 	;
-bvs		: (ldic | pdic | tkv)* ;
+bdic	: bks bs bvs be nl* ;
+bks		: bk '+' bk 
+		| bk 	;
+bk 		: PV;
+bs      : BS;
+be      : BE;
+bvs		: ( pdic )* ;
 
-//
-tkv		:   nl* tk '%' tvs nl* ;
-tk		: 	PV 	;
-tvs 	:  	tvs '+' tv		
-		|	tv
-		;
-tv 		: 	PV ;
-//
 files 	: 	file+		; 
-file 	:	v nl*		;
+file 	:	fv nl*		;
+fv 	    :   v ;
 
 //
 dic		:	(kv)+	;
@@ -30,25 +26,24 @@ vs		: 	vs '+' v
 		;
 v 		: 	PV;
 
-//
-ldic	: 	(lkv)+ 	;
-lkv		: 	nl* pk '@' pvs nl*	;
-
-//
 pdic	: 	(pkv)+ 	;
-pkv		: 	nl* pk ':' pvs nl*	;
+pkv		: 	nl* pk po pvs nl*	;
 pvs 	:  	pvs '+' pv		
 		|	pv
 		;
 pk 		: 	PV PKD  
 		|   PV;
-PKD		: 	'.';
+po		:   O ;
 pv 		: 	PV PVD
 		|	PV	
 		;
+PKD		: 	'.';
+
+O       :   '@'	| ':' | '%';
+BS		:   '/@' | '/:' ;
+BE      :   '/' ;
 PVD		:	'*' | '>' | '<';							
 PV		: 	[a-zA-Z0-9\u4e00-\u9fa5_ ]+('.'[a-zA-Z0-9]+)? 	;
-// PK      : 	[a-zA-Z0-9_]+ 	;
 
 
 
@@ -58,6 +53,7 @@ BlockComment: 	'/*' .*? '*/' -> skip;
 LineComment	: 	'//' ~ [\r\n]* -> skip;
 STR0		: 	'EOF' -> skip ;
 
+///O	Order
 ///L 	Linear
 ///P 	Parallel
 ///k 	KEY
@@ -65,3 +61,5 @@ STR0		: 	'EOF' -> skip ;
 ///D 	Desrciption
 ///NL 	NewLine
 ///B 	Button
+///S    Start
+///E    End
